@@ -10,9 +10,41 @@
 // BONUS
 // Clicchiamo sui pallini e mostriamo l’immagine corrispondente Generiamo i pallini con JS
 
-// creo le variabili degli elementi dell'HTML che mi servono
-$(document).ready(function () {
-  var angleLeft = $(".prev > i");
-  var angleRight = $(".next > i");
-  var images = $(".images > img")
+// azioni da eseguire dopo caricamento DOM
+$(document).ready(function() {
+  slider()
 });
+
+function slider() {
+  // creo variabili e seleziono
+  // funzione per scorrere a dx con add/removeClass al click di angle-right
+  $(".next").click(function() {
+    // rimuovo active dalla prima immagine e dal primo pallino
+    var activeImg = $("img.active");
+    var activeCircle = $("i.active");
+    activeImg.removeClass("active");
+    activeCircle.removeClass("active");
+    // se l'immagine e il pallino non hanno la classe last
+    if (!activeImg.hasClass("last") && !activeCircle.hasClass("last")) {
+      // aggiungo active all'immagine e pallino successivi
+      activeImg.next("img").addClass("active");
+      activeCircle.next("i").addClass("active");
+      // altrimenti
+    } else {
+      // aggiungo active alla prima immagine e al primo pallino
+      var firstImg = $("img.first");
+      var firstCircle = $("i.first");
+      firstImg.addClass("active");
+      firstCircle.addClass("active");
+    }
+
+    // funzione per scorrere a sx con add/removeClass al click di angle-right
+
+  });
+}
+  //
+  // // creo variabili e seleziono gli elementi dell'HTML
+  // var images = $(".images img");
+  // var lastImg = $("img.last");
+  // var circle = $(".nav i");
+  // var lastCircle = $("i.last");
