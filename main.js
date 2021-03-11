@@ -48,7 +48,7 @@ function slider() {
     activeCircle.removeClass("active");
     // se l'immagine e il pallino non hanno la classe first
     if (!activeImg.hasClass("first") && !activeCircle.hasClass("first")) {
-      // aggiungo active all'immagine e pallino successivi
+      // aggiungo active all'immagine e pallino precedenti
       activeImg.prev("img").addClass("active");
       activeCircle.prev("i").addClass("active");
       // altrimenti
