@@ -37,14 +37,30 @@ function slider() {
       firstImg.addClass("active");
       firstCircle.addClass("active");
     }
-
-    // funzione per scorrere a sx con add/removeClass al click di angle-right
-
+  });
+  // funzione per scorrere a sx con add/removeClass al click di angle-left
+  $(".prev").click(function() {
+    // rimuovo active dalla prima immagine e dal primo pallino
+    var activeImg = $("img.active");
+    var activeCircle = $("i.active");
+    activeImg.removeClass("active");
+    activeCircle.removeClass("active");
+    // se l'immagine e il pallino non hanno la classe first
+    if (!activeImg.hasClass("first") && !activeCircle.hasClass("first")) {
+      // aggiungo active all'immagine e pallino successivi
+      activeImg.prev("img").addClass("active");
+      activeCircle.prev("i").addClass("active");
+      // altrimenti
+    } else {
+      // aggiungo active all'ultima immagine e all'ultimo pallino
+      var lastImg = $("img.last");
+      var lastCircle = $("i.last");
+      lastImg.addClass("active");
+      lastCircle.addClass("active");
+    }
   });
 }
-  //
+
   // // creo variabili e seleziono gli elementi dell'HTML
   // var images = $(".images img");
-  // var lastImg = $("img.last");
   // var circle = $(".nav i");
-  // var lastCircle = $("i.last");
