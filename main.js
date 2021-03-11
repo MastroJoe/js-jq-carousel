@@ -10,13 +10,14 @@
 // BONUS
 // Clicchiamo sui pallini e mostriamo l’immagine corrispondente Generiamo i pallini con JS
 
+
+
 // azioni da eseguire dopo caricamento DOM
 $(document).ready(function() {
   slider()
 });
 
 function slider() {
-  // creo variabili e seleziono
   // funzione per scorrere a dx con add/removeClass al click di angle-right
   $(".next").click(function() {
     // rimuovo active dalla prima immagine e dal primo pallino
@@ -60,7 +61,3 @@ function slider() {
     }
   });
 }
-
-  // // creo variabili e seleziono gli elementi dell'HTML
-  // var images = $(".images img");
-  // var circle = $(".nav i");
